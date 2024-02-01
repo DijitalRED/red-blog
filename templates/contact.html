@@ -1,0 +1,91 @@
+{% from "bootstrap5/form.html" import render_form %} {% include "header.html" %}
+
+<!-- Page Header-->
+<header
+        class="masthead"
+        style="background-image: url('../static/assets/img/contact-bg.jpg')"
+>
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>{{ title }}</h1>
+                    <span class="subheading">Bir geri bildiriminiz mi var?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p>
+                    Bizimle iletişime geçmek için aşağıdaki formu doldurabilir ya da <a
+                        href="mailto:dijitalrediletisim@gmail.com">e-posta gönderebilirsiniz.</a>
+                </p>
+                <div class="my-5">
+                    {{ render_form(form) }}
+<!--                    <form-->
+<!--                            id="contactForm"-->
+<!--                            name="sentMessage"-->
+<!--                            action="{{ url_for('contact') }}"-->
+<!--                            method="post"-->
+<!--                    >-->
+<!--                        <div class="form-floating">-->
+<!--                            <input-->
+<!--                                    class="form-control"-->
+<!--                                    id="name"-->
+<!--                                    name="name"-->
+<!--                                    type="text"-->
+<!--                                    required-->
+<!--                            />-->
+<!--                            <label for="name">İsminiz</label>-->
+<!--                        </div>-->
+<!--                        <div class="form-floating">-->
+<!--                            <input-->
+<!--                                    class="form-control"-->
+<!--                                    id="email"-->
+<!--                                    name="email"-->
+<!--                                    type="email"-->
+<!--                                    required-->
+<!--                            />-->
+<!--                            <label for="email">E-Posta Adresiniz</label>-->
+<!--                        </div>-->
+<!--                        <div class="form-floating">-->
+<!--                            <input-->
+<!--                                    class="form-control"-->
+<!--                                    id="phone"-->
+<!--                                    name="phone"-->
+<!--                                    type="tel"-->
+<!--                                    required-->
+<!--                            />-->
+<!--                            <label for="phone">Telefon Numaranız</label>-->
+<!--                        </div>-->
+<!--                        <div class="form-floating">-->
+<!--              <textarea-->
+<!--                      class="form-control"-->
+<!--                      id="message"-->
+<!--                      name="message"-->
+<!--                      required-->
+<!--                      style="height: 12rem"-->
+<!--              ></textarea>-->
+<!--                            <label for="message">Mesajınız</label>-->
+<!--                        </div>-->
+<!--                        <br/>-->
+<!--                        <button-->
+<!--                                class="btn btn-primary text-uppercase"-->
+<!--                                id="submitButton"-->
+<!--                                type="submit"-->
+<!--                        >-->
+<!--                            Gönder-->
+<!--                        </button>-->
+<!--                    </form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include "footer.html" %}
