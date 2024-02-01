@@ -16,8 +16,8 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm, ContactF
 from datetime import date
 import os
 
-FROM_ADDRESS = "technoredxmail@gmail.com"
-FROM_ADDRESS_PASSWORD = "rwmemisnkawjequr"  # TODO: hide
+FROM_ADDRESS = os.environ.get('MAIL_ADDRESS')
+FROM_ADDRESS_PASSWORD = os.environ.get('MAIL_PASSWORD')
 TO_ADDRESS = "dijitalrediletisim@gmail.com"
 
 app = Flask(__name__)
