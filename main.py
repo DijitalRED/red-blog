@@ -14,13 +14,14 @@ from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm, ContactForm, AdminForm
 from datetime import date
+import os
 
 FROM_ADDRESS = "technoredxmail@gmail.com"
 FROM_ADDRESS_PASSWORD = "rwmemisnkawjequr"  # TODO: hide
 TO_ADDRESS = "dijitalrediletisim@gmail.com"
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '65ds4ag6Qf4dsGf6J05sdf54ds3HaNMK'  # TODO: hide
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -33,7 +34,7 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///blog.db")
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
@@ -346,4 +347,4 @@ def admins():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False)
